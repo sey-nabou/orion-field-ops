@@ -15,19 +15,24 @@ const Home = () => {
 
   const handleStatusChange = (newStatus: AgentStatus) => {
     setAgentStatus(newStatus);
-    toast.success(`Status updated to ${newStatus}`);
+    const statusMessages = {
+      available: "Disponible",
+      "on-mission": "En mission",
+      unavailable: "Indisponible"
+    };
+    toast.success(`Statut mis à jour : ${statusMessages[newStatus]}`);
   };
 
   const handleAcceptMission = () => {
     setShowNotification(false);
     setAgentStatus("on-mission");
-    toast.success("Mission accepted!");
+    toast.success("Mission acceptée !");
     navigate("/mission/1");
   };
 
   const handleDeclineMission = () => {
     setShowNotification(false);
-    toast.info("Mission declined");
+    toast.info("Mission refusée");
   };
 
   return (
@@ -40,7 +45,7 @@ const Home = () => {
               <User className="w-6 h-6" />
             </div>
             <div>
-              <h2 className="font-display font-bold text-lg">Agent Silva</h2>
+              <h2 className="font-display font-bold text-lg">Mamadou Ndiaye</h2>
               <p className="text-xs text-white/80">ID: A-2547</p>
             </div>
           </div>
@@ -62,7 +67,7 @@ const Home = () => {
       <div className="p-4 space-y-6">
         {/* Status Section */}
         <div className="bg-card rounded-2xl p-6 shadow-md border border-border">
-          <h3 className="font-display font-bold text-lg mb-4">Agent Status</h3>
+          <h3 className="font-display font-bold text-lg mb-4">Statut de l'Agent</h3>
           <div className="flex items-center justify-between mb-4">
             <StatusBadge status={agentStatus} size="lg" />
           </div>
@@ -72,21 +77,21 @@ const Home = () => {
               size="sm"
               onClick={() => handleStatusChange("available")}
             >
-              Available
+              Disponible
             </Button>
             <Button
               variant={agentStatus === "on-mission" ? "alert" : "outline"}
               size="sm"
               onClick={() => handleStatusChange("on-mission")}
             >
-              On Mission
+              En Mission
             </Button>
             <Button
               variant={agentStatus === "unavailable" ? "destructive" : "outline"}
               size="sm"
               onClick={() => handleStatusChange("unavailable")}
             >
-              Break
+              Pause
             </Button>
           </div>
         </div>
@@ -96,7 +101,7 @@ const Home = () => {
           <div className="gradient-primary p-4 text-white">
             <div className="flex items-center gap-2">
               <MapPin className="w-5 h-5" />
-              <h3 className="font-display font-bold">Your Location</h3>
+              <h3 className="font-display font-bold">Votre Position</h3>
             </div>
           </div>
           <div className="aspect-video bg-muted relative">
@@ -104,10 +109,10 @@ const Home = () => {
               <div className="text-center space-y-2">
                 <MapPin className="w-12 h-12 text-primary-light mx-auto animate-pulse" />
                 <p className="text-sm text-muted-foreground font-medium">
-                  Downtown Sector 7
+                  Plateau, Dakar
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Coordinates: 40.7128° N, 74.0060° W
+                  Coordonnées: 14.7167° N, 17.4677° W
                 </p>
               </div>
             </div>
@@ -120,15 +125,15 @@ const Home = () => {
             <div className="flex items-center gap-2 text-accent">
               <Bell className="w-5 h-5 animate-pulse" />
               <h3 className="font-display font-bold text-lg">
-                New Mission Alert
+                Nouvelle Alerte Mission
               </h3>
             </div>
             <MissionCard
               id="1"
-              type="Medical Emergency"
+              type="Urgence Médicale"
               urgency="critical"
-              location="125 Park Avenue, Sector 7"
-              time="2 minutes ago"
+              location="Avenue Léopold Sédar Senghor, Plateau"
+              time="Il y a 2 minutes"
               distance="1.2 km"
               isNotification
               onAccept={handleAcceptMission}
@@ -146,7 +151,7 @@ const Home = () => {
             className="h-24 flex-col"
           >
             <Bell className="w-8 h-8 mb-2" />
-            <span>View Missions</span>
+            <span>Voir Missions</span>
           </Button>
           <Button
             variant="outline"
@@ -155,7 +160,7 @@ const Home = () => {
             className="h-24 flex-col"
           >
             <User className="w-8 h-8 mb-2" />
-            <span>Profile</span>
+            <span>Profil</span>
           </Button>
         </div>
       </div>

@@ -9,17 +9,17 @@ interface StatusBadgeProps {
 
 const statusConfig = {
   available: {
-    label: "Available",
+    label: "Disponible",
     color: "bg-status-available",
     icon: "🟢",
   },
   "on-mission": {
-    label: "On Mission",
+    label: "En Mission",
     color: "bg-status-mission",
     icon: "🟡",
   },
   unavailable: {
-    label: "Unavailable",
+    label: "Indisponible",
     color: "bg-status-unavailable",
     icon: "🔴",
   },

@@ -17,25 +17,25 @@ interface MissionCardProps {
 
 const urgencyConfig = {
   low: {
-    label: "Low Priority",
+    label: "Priorité Basse",
     color: "text-success",
     bgColor: "bg-success/10",
     borderColor: "border-success",
   },
   medium: {
-    label: "Medium Priority",
+    label: "Priorité Moyenne",
     color: "text-status-mission",
     bgColor: "bg-status-mission/10",
     borderColor: "border-status-mission",
   },
   high: {
-    label: "High Priority",
+    label: "Priorité Haute",
     color: "text-accent",
     bgColor: "bg-accent/10",
     borderColor: "border-accent",
   },
   critical: {
-    label: "Critical",
+    label: "Critique",
     color: "text-destructive",
     bgColor: "bg-destructive/10",
     borderColor: "border-destructive",
@@ -109,7 +109,7 @@ export const MissionCard = ({
                 onClick={onAccept}
                 className="flex-1"
               >
-                Accept Mission
+                Accepter Mission
               </Button>
             )}
             {onDecline && (
@@ -119,7 +119,7 @@ export const MissionCard = ({
                 onClick={onDecline}
                 className="flex-1"
               >
-                Decline
+                Refuser
               </Button>
             )}
           </div>

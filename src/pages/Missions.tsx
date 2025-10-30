@@ -11,38 +11,38 @@ const Missions = () => {
     active: [
       {
         id: "1",
-        type: "Medical Emergency",
+        type: "Urgence Médicale",
         urgency: "critical" as const,
-        location: "125 Park Avenue, Sector 7",
-        time: "5 minutes ago",
+        location: "Avenue Léopold Sédar Senghor, Plateau",
+        time: "Il y a 5 minutes",
         distance: "1.2 km",
       },
     ],
     completed: [
       {
         id: "2",
-        type: "Traffic Incident",
+        type: "Accident de Circulation",
         urgency: "medium" as const,
-        location: "Oak Street & 5th Avenue",
-        time: "2 hours ago",
+        location: "Route de Rufisque, Pikine",
+        time: "Il y a 2 heures",
         distance: "3.5 km",
       },
       {
         id: "3",
-        type: "Public Disturbance",
+        type: "Désordre Public",
         urgency: "low" as const,
-        location: "Central Park North Entrance",
-        time: "5 hours ago",
+        location: "Marché Sandaga, Médina",
+        time: "Il y a 5 heures",
         distance: "2.1 km",
       },
     ],
     pending: [
       {
         id: "4",
-        type: "Equipment Check",
+        type: "Vérification Équipement",
         urgency: "low" as const,
-        location: "Station 12",
-        time: "Scheduled for tomorrow",
+        location: "Commissariat Central, Thiès",
+        time: "Prévu pour demain",
         distance: "4.2 km",
       },
     ],
@@ -60,8 +60,8 @@ const Missions = () => {
             <ArrowLeft className="w-6 h-6" />
           </button>
           <div>
-            <h1 className="font-display font-bold text-2xl">My Missions</h1>
-            <p className="text-sm text-white/80">View and manage your assignments</p>
+            <h1 className="font-display font-bold text-2xl">Mes Missions</h1>
+            <p className="text-sm text-white/80">Consultez et gérez vos affectations</p>
           </div>
         </div>
       </header>
@@ -72,15 +72,15 @@ const Missions = () => {
           <TabsList className="grid w-full grid-cols-3 mb-6">
             <TabsTrigger value="active" className="gap-2">
               <Clock className="w-4 h-4" />
-              Active
+              Actives
             </TabsTrigger>
             <TabsTrigger value="completed" className="gap-2">
               <CheckCircle className="w-4 h-4" />
-              Completed
+              Terminées
             </TabsTrigger>
             <TabsTrigger value="pending" className="gap-2">
               <AlertCircle className="w-4 h-4" />
-              Pending
+              En attente
             </TabsTrigger>
           </TabsList>
 
@@ -98,8 +98,8 @@ const Missions = () => {
             ) : (
               <div className="text-center py-12 text-muted-foreground">
                 <Clock className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                <p className="text-lg font-semibold">No active missions</p>
-                <p className="text-sm">You're all caught up!</p>
+                <p className="text-lg font-semibold">Aucune mission active</p>
+                <p className="text-sm">Vous êtes à jour !</p>
               </div>
             )}
           </TabsContent>

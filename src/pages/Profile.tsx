@@ -13,7 +13,7 @@ const Profile = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   const handleLogout = () => {
-    toast.success("Logged out successfully");
+    toast.success("Déconnexion réussie");
     navigate("/auth");
   };
 
@@ -28,7 +28,7 @@ const Profile = () => {
           >
             <ArrowLeft className="w-6 h-6" />
           </button>
-          <h1 className="font-display font-bold text-2xl">Profile & Settings</h1>
+          <h1 className="font-display font-bold text-2xl">Profil & Paramètres</h1>
         </div>
       </header>
 
@@ -39,8 +39,8 @@ const Profile = () => {
           <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center shadow-lg">
             <User className="w-12 h-12 text-white" />
           </div>
-          <h2 className="font-display text-2xl font-bold mb-1">Agent Silva</h2>
-          <p className="text-muted-foreground mb-4">ID: A-2547</p>
+          <h2 className="font-display text-2xl font-bold mb-1">Mamadou Ndiaye</h2>
+          <p className="text-muted-foreground mb-4">ID: A-2547 | Police Nationale</p>
           <StatusBadge status="available" size="md" />
           
           <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-border">
@@ -69,24 +69,24 @@ const Profile = () => {
         <div className="bg-card rounded-2xl p-6 shadow-md border border-border">
           <div className="flex items-center gap-3 mb-4">
             <Shield className="w-5 h-5 text-primary-light" />
-            <h3 className="font-display font-bold text-lg">Specialization</h3>
+            <h3 className="font-display font-bold text-lg">Spécialisation</h3>
           </div>
           <div className="flex flex-wrap gap-2">
             <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-              Medical Response
+              Interventions d'Urgence
             </span>
             <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-              Emergency Coordination
+              Coordination de Terrain
             </span>
             <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-              Crisis Management
+              Gestion de Crise
             </span>
           </div>
         </div>
 
         {/* Settings */}
         <div className="bg-card rounded-2xl p-6 shadow-md border border-border space-y-6">
-          <h3 className="font-display font-bold text-lg">Settings</h3>
+          <h3 className="font-display font-bold text-lg">Paramètres</h3>
 
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -96,7 +96,7 @@ const Profile = () => {
                   Notifications
                 </Label>
                 <p className="text-sm text-muted-foreground">
-                  Receive mission alerts
+                  Recevoir les alertes de mission
                 </p>
               </div>
             </div>
@@ -112,13 +112,13 @@ const Profile = () => {
               <Globe className="w-5 h-5 text-primary-light" />
               <div>
                 <Label htmlFor="language" className="text-base font-semibold">
-                  Language
+                  Langue
                 </Label>
-                <p className="text-sm text-muted-foreground">English (US)</p>
+                <p className="text-sm text-muted-foreground">Français</p>
               </div>
             </div>
             <Button variant="ghost" size="sm">
-              Change
+              Modifier
             </Button>
           </div>
 
@@ -127,10 +127,10 @@ const Profile = () => {
               <User className="w-5 h-5 text-primary-light" />
               <div>
                 <Label className="text-base font-semibold">
-                  Dark Mode
+                  Mode Sombre
                 </Label>
                 <p className="text-sm text-muted-foreground">
-                  Toggle theme
+                  Basculer le thème
                 </p>
               </div>
             </div>
@@ -145,7 +145,7 @@ const Profile = () => {
         {/* Actions */}
         <div className="space-y-3">
           <Button variant="outline" size="lg" className="w-full">
-            Edit Profile
+            Modifier le Profil
           </Button>
           <Button
             variant="destructive"
@@ -154,7 +154,7 @@ const Profile = () => {
             onClick={handleLogout}
           >
             <LogOut className="w-5 h-5" />
-            Logout
+            Déconnexion
           </Button>
         </div>
       </div>

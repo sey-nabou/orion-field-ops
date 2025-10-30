@@ -15,12 +15,12 @@ const Auth = () => {
     e.preventDefault();
     
     if (!email || !password) {
-      toast.error("Please fill in all fields");
+      toast.error("Veuillez remplir tous les champs");
       return;
     }
 
     // Simulate login
-    toast.success("Login successful!");
+    toast.success("Connexion réussie !");
     navigate("/");
   };
 
@@ -36,7 +36,7 @@ const Auth = () => {
             ORION
           </h1>
           <p className="text-white/80 text-lg">
-            Field Agent Assistant
+            Assistant Intelligent de Terrain
           </p>
         </div>
 
@@ -44,12 +44,12 @@ const Auth = () => {
         <form onSubmit={handleLogin} className="bg-white rounded-2xl shadow-2xl p-8 space-y-6">
           <div className="space-y-2">
             <Label htmlFor="email" className="text-base font-semibold">
-              Email
+              Adresse Email
             </Label>
             <Input
               id="email"
               type="email"
-              placeholder="agent@orion.com"
+              placeholder="agent@orion.sn"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="h-12 text-base"
@@ -58,7 +58,7 @@ const Auth = () => {
 
           <div className="space-y-2">
             <Label htmlFor="password" className="text-base font-semibold">
-              Password
+              Mot de Passe
             </Label>
             <Input
               id="password"
@@ -76,19 +76,19 @@ const Auth = () => {
             size="lg"
             className="w-full"
           >
-            Login
+            Se Connecter
           </Button>
 
           <button
             type="button"
             className="w-full text-center text-sm text-primary-light hover:text-primary transition-colors"
           >
-            Forgot password?
+            Mot de passe oublié ?
           </button>
         </form>
 
         <p className="text-center text-white/60 text-sm mt-6">
-          © 2025 ORION System. All rights reserved.
+          © 2026 Système ORION - JOJ Sénégal. Tous droits réservés.
         </p>
       </div>
     </div>

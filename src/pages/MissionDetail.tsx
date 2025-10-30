@@ -11,14 +11,14 @@ const MissionDetail = () => {
 
   const handleResolve = () => {
     setIsResolved(true);
-    toast.success("Mission marked as resolved!");
+    toast.success("Mission marquée comme résolue !");
     setTimeout(() => {
       navigate("/missions");
     }, 2000);
   };
 
   const handleRequestReinforcement = () => {
-    toast.info("Reinforcement request sent to dispatch");
+    toast.info("Demande de renfort envoyée au dispatching");
   };
 
   return (
@@ -34,7 +34,7 @@ const MissionDetail = () => {
           </button>
           <div className="flex-1">
             <h1 className="font-display font-bold text-xl">Mission #{id}</h1>
-            <p className="text-sm text-white/80">In Progress</p>
+            <p className="text-sm text-white/80">En cours</p>
           </div>
         </div>
       </header>
@@ -46,10 +46,10 @@ const MissionDetail = () => {
           <div className="flex items-start justify-between">
             <div>
               <h2 className="font-display text-2xl font-bold mb-2">
-                Medical Emergency
+                Urgence Médicale
               </h2>
               <div className="inline-flex items-center gap-1 px-3 py-1 rounded-md text-sm font-semibold bg-destructive/10 text-destructive">
-                Critical Priority
+                Priorité Critique
               </div>
             </div>
             {isResolved && (
@@ -61,17 +61,17 @@ const MissionDetail = () => {
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-primary-light mt-0.5" />
               <div>
-                <p className="font-semibold">Location</p>
+                <p className="font-semibold">Localisation</p>
                 <p className="text-sm text-muted-foreground">
-                  125 Park Avenue, Sector 7
+                  Avenue Léopold Sédar Senghor, Plateau
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Clock className="w-5 h-5 text-primary-light mt-0.5" />
               <div>
-                <p className="font-semibold">Received</p>
-                <p className="text-sm text-muted-foreground">5 minutes ago</p>
+                <p className="font-semibold">Reçue</p>
+                <p className="text-sm text-muted-foreground">Il y a 5 minutes</p>
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@ const MissionDetail = () => {
           <div className="gradient-primary p-4 text-white">
             <h3 className="font-display font-bold flex items-center gap-2">
               <MapPin className="w-5 h-5" />
-              Live Navigation
+              Navigation en Direct
             </h3>
           </div>
           <div className="aspect-video bg-muted relative">
@@ -93,11 +93,11 @@ const MissionDetail = () => {
                   1.2 km
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Estimated: 4 minutes
+                  Estimé : 4 minutes
                 </p>
               </div>
               <Button variant="gradient" size="lg">
-                Open in Maps
+                Ouvrir dans Maps
               </Button>
             </div>
           </div>
@@ -106,7 +106,7 @@ const MissionDetail = () => {
         {/* Mission Steps */}
         <div className="bg-card rounded-2xl p-6 shadow-md border border-border">
           <h3 className="font-display font-bold text-lg mb-4">
-            Mission Progress
+            Progression de la Mission
           </h3>
           <div className="space-y-3">
             <div className="flex items-center gap-3">
@@ -114,28 +114,28 @@ const MissionDetail = () => {
                 ✓
               </div>
               <span className="text-muted-foreground line-through">
-                Mission accepted
+                Mission acceptée
               </span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-primary-light flex items-center justify-center text-white text-sm font-bold animate-pulse">
                 2
               </div>
-              <span className="font-semibold">En route to location</span>
+              <span className="font-semibold">En route vers le lieu</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-muted-foreground text-sm font-bold">
                 3
               </div>
               <span className="text-muted-foreground">
-                Complete mission objectives
+                Compléter les objectifs
               </span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-muted-foreground text-sm font-bold">
                 4
               </div>
-              <span className="text-muted-foreground">Submit report</span>
+              <span className="text-muted-foreground">Soumettre le rapport</span>
             </div>
           </div>
         </div>
@@ -150,13 +150,13 @@ const MissionDetail = () => {
             disabled={isResolved}
           >
             <CheckCircle className="w-5 h-5" />
-            {isResolved ? "Mission Resolved" : "Mark as Resolved"}
+            {isResolved ? "Mission Résolue" : "Marquer comme Résolue"}
           </Button>
 
           <div className="grid grid-cols-2 gap-3">
             <Button variant="outline" size="lg">
               <Camera className="w-5 h-5" />
-              Add Photo
+              Ajouter Photo
             </Button>
             <Button
               variant="alert"
@@ -164,7 +164,7 @@ const MissionDetail = () => {
               onClick={handleRequestReinforcement}
             >
               <Users className="w-5 h-5" />
-              Request Backup
+              Demander Renfort
             </Button>
           </div>
         </div>
