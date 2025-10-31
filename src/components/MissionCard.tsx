@@ -58,15 +58,15 @@ export const MissionCard = ({
   return (
     <Card
       className={cn(
-        "p-5 animate-slide-in border-2 shadow-lg hover:shadow-xl transition-all duration-300",
+        "p-4 sm:p-5 animate-slide-in border-2 shadow-lg hover:shadow-xl transition-all duration-300",
         isNotification && config.borderColor
       )}
     >
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {/* Header */}
-        <div className="flex items-start justify-between">
-          <div className="space-y-1">
-            <h3 className="font-display text-lg font-bold text-foreground">
+        <div className="flex items-start justify-between gap-3">
+          <div className="space-y-1 flex-1 min-w-0">
+            <h3 className="font-display text-base sm:text-lg font-bold text-foreground break-words">
               {type}
             </h3>
             <div
@@ -76,12 +76,12 @@ export const MissionCard = ({
                 config.color
               )}
             >
-              <AlertCircle className="w-3 h-3" />
-              {config.label}
+              <AlertCircle className="w-3 h-3 flex-shrink-0" />
+              <span className="whitespace-nowrap">{config.label}</span>
             </div>
           </div>
           {distance && (
-            <div className="text-sm font-semibold text-primary-light">
+            <div className="text-xs sm:text-sm font-semibold text-primary-light whitespace-nowrap flex-shrink-0">
               {distance}
             </div>
           )}
@@ -89,25 +89,25 @@ export const MissionCard = ({
 
         {/* Details */}
         <div className="space-y-2">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <MapPin className="w-4 h-4 text-primary-light" />
-            <span>{location}</span>
+          <div className="flex items-start gap-2 text-xs sm:text-sm text-muted-foreground">
+            <MapPin className="w-4 h-4 text-primary-light flex-shrink-0 mt-0.5" />
+            <span className="break-words flex-1">{location}</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Clock className="w-4 h-4 text-primary-light" />
+          <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+            <Clock className="w-4 h-4 text-primary-light flex-shrink-0" />
             <span>{time}</span>
           </div>
         </div>
 
         {/* Actions */}
         {isNotification && (onAccept || onDecline) && (
-          <div className="flex gap-3 pt-2">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2">
             {onAccept && (
               <Button
                 variant="gradient"
                 size="lg"
                 onClick={onAccept}
-                className="flex-1"
+                className="flex-1 text-sm sm:text-base"
               >
                 Accepter Mission
               </Button>
@@ -117,7 +117,7 @@ export const MissionCard = ({
                 variant="outline"
                 size="lg"
                 onClick={onDecline}
-                className="flex-1"
+                className="flex-1 text-sm sm:text-base"
               >
                 Refuser
               </Button>
