@@ -86,20 +86,20 @@ const MissionDetail = () => {
             </h3>
           </div>
           <div className="aspect-video bg-muted relative overflow-hidden">
-            {/* Static Google Maps Image - Using coordinates for Dakar, Senegal */}
-            <img 
-              src="https://maps.googleapis.com/maps/api/staticmap?center=14.7167,-17.4677&zoom=15&size=600x400&markers=color:red%7C14.7167,-17.4677&key=YOUR_API_KEY_HERE"
-              alt="Carte de localisation - Avenue Léopold Sédar Senghor, Dakar"
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                // Fallback to OpenStreetMap tile if Google Maps fails
-                e.currentTarget.src = `https://www.openstreetmap.org/export/embed.html?bbox=-17.4777,-17.4577,14.7067,14.7267&layer=mapnik&marker=14.7167,-17.4677`;
-                e.currentTarget.style.border = 'none';
-              }}
+            {/* Static Map using OpenStreetMap - Avenue Léopold Sédar Senghor, Plateau, Dakar */}
+            <iframe
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              scrolling="no"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-17.4727%2C14.7117%2C-17.4627%2C14.7217&layer=mapnik&marker=14.7167%2C-17.4677"
+              style={{ border: 0 }}
+              title="Carte de localisation - Avenue Léopold Sédar Senghor, Dakar"
+              className="w-full h-full"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-            <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center gap-3 px-4">
-              <div className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center gap-3 px-4 pointer-events-none">
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg pointer-events-auto">
                 <p className="text-xl sm:text-2xl font-display font-bold text-primary">
                   1.2 km
                 </p>
@@ -110,7 +110,7 @@ const MissionDetail = () => {
               <Button 
                 variant="gradient" 
                 size="lg"
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto pointer-events-auto"
                 onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=14.7167,-17.4677`, '_blank')}
               >
                 <MapPin className="w-4 h-4" />

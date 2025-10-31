@@ -108,23 +108,24 @@ const Home = () => {
             </div>
           </div>
           <div className="aspect-video bg-muted relative overflow-hidden">
-            {/* Static Map - Plateau, Dakar */}
-            <img 
-              src="https://maps.googleapis.com/maps/api/staticmap?center=14.7167,-17.4677&zoom=14&size=600x400&markers=color:blue%7C14.7167,-17.4677&key=YOUR_API_KEY_HERE"
-              alt="Carte - Plateau, Dakar"
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
+            {/* Static Map using OpenStreetMap - Plateau, Dakar */}
+            <iframe
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              scrolling="no"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-17.4777%2C14.7067%2C-17.4577%2C14.7267&layer=mapnik&marker=14.7167%2C-17.4677"
+              style={{ border: 0 }}
+              title="Carte - Plateau, Dakar"
+              className="w-full h-full"
             />
-            <div className="absolute inset-0 flex items-center justify-center bg-muted/95">
-              <div className="text-center space-y-2 p-4">
-                <MapPin className="w-10 h-10 sm:w-12 sm:h-12 text-primary-light mx-auto animate-pulse" />
-                <p className="text-xs sm:text-sm text-muted-foreground font-medium">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 sm:p-4">
+              <div className="text-center">
+                <p className="text-xs sm:text-sm text-white font-semibold drop-shadow-lg">
                   Plateau, Dakar
                 </p>
-                <p className="text-xs text-muted-foreground">
-                  Coordonnées: 14.7167° N, 17.4677° W
+                <p className="text-xs text-white/80 drop-shadow-lg">
+                  14.7167° N, 17.4677° W
                 </p>
               </div>
             </div>
